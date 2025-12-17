@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Ganesh Yadav • Wholesale Fruits & Vegetables - Kalimati Tarkari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Elegant font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --green: #1b7b3b;
+      --green-soft: #e8f6ee;
+      --maroon: #7b1b3b;
+      --maroon-soft: #f6e8ee;
+      --dark: #141414;
+      --gray: #192c51;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #ffffff 0, #f3f4f8 45%, #eef1f5 100%);
+      color: var(--dark);
+      line-height: 1.55;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+    }
+
+    .logo-text-main {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--maroon);
+    }
+
+    .logo-text-sub {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      font-size: 0.86rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--maroon-soft);
+      color: var(--maroon);
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      border-radius: 999px;
+      padding: 0.62rem 1.05rem;
+      font-size: 0.86rem;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.12s ease, box-shadow 0.18s ease,
+        background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--maroon), #b43352);
+      color: #fff;
+      box-shadow: 0 14px 32px rgba(123, 27, 59, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(123, 27, 59, 0.36);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(123, 27, 59, 0.35);
+      background: #ffffff;
+      color: var(--maroon);
+    }
+
+    .btn-outline:hover {
+      background: var(--maroon);
+      color: #fff;
+      border-color: var(--maroon);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.4rem 1.25rem 3rem;
+    }
+
+    section {
+      margin: 2.2rem 0;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        position: sticky;
+        top: 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-cta,
+      .hero-mini {
+        justify-content: center;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        padding: 6rem 2rem 2rem;
+        /* Added top padding to clear header */
+        gap: 1.5rem;
+        height: 100vh;
+        /* Full height */
+        border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, visibility 0.3s;
+        visibility: hidden;
+        z-index: 998;
+        /* Behind header (999) */
+        overflow-y: auto;
+        /* Allow scrolling if menu is tall */
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        visibility: visible;
+      }
+
+      .nav-links a {
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+      }
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--dark);
+      cursor: pointer;
+    }
+
+    /* Market Rates Iframe */
+    .market-iframe {
+      width: 100%;
+      height: 700px;
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .market-iframe {
+        height: 70vh;
+        /* Adjust height for mobile */
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(123, 27, 59, 0.05);
+      border: 1px solid rgba(123, 27, 59, 0.12);
+      color: var(--maroon);
+      font-size: 0.74rem;
+      margin-bottom: 0.8rem;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #10b981;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      margin-bottom: 0.65rem;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--maroon), var(--green));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--gray);
+      max-width: 34rem;
+      margin-bottom: 1rem;
+      font-size: 0.92rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+
+    .mini-pill {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+      color: #111827;
+      font-weight: 500;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      background: radial-gradient(circle at top left, #ffffff 0, #f8fafc 100%);
+      border-radius: 24px;
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      border-radius: 18px;
+      background: linear-gradient(135deg, #111827, #020617);
+      padding: 0.45rem;
+    }
+
+    .hero-photo-inner {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.75rem;
+      color: rgba(209, 213, 219, 0.92);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.82rem;
+    }
+
+    /* Titles */
+    .section-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.25rem;
+      letter-spacing: 0.02em;
+    }
+
+    .section-title span {
+      color: var(--maroon);
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 0.95rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    /* Quick Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--maroon);
+    }
+
+    .service-text {
+      color: var(--gray);
+      font-size: 0.88rem;
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    @media (max-width: 1100px) {
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.86rem;
+    }
+
+    .product-header {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .product-thumb {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #f3f4f6;
+      border: 1px solid rgba(229, 231, 235, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      color: #9ca3af;
+      text-align: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+
+    .product-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-name {
+      font-weight: 600;
+      font-size: 0.96rem;
+    }
+
+    .product-meta {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 0.6rem;
+      margin-top: 0.2rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--green);
+      font-size: 0.92rem;
+    }
+
+    .price-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.15rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.15rem 0.65rem;
+      font-size: 0.74rem;
+      color: var(--gray);
+      margin-top: 0.15rem;
+      width: fit-content;
+      background: #f9fafb;
+    }
+
+    /* Cart */
+    .cart-wrapper {
+      margin-top: 1.2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 1.2rem;
+    }
+
+    @media (max-width: 900px) {
+      .cart-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cart {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.24);
+    }
+
+    .cart h3 {
+      margin-bottom: 0.55rem;
+      font-size: 1rem;
+    }
+
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .cart-table th,
+    .cart-table td {
+      padding: 0.38rem 0.25rem;
+      text-align: left;
+    }
+
+    .cart-table th {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.95);
+      font-weight: 600;
+      font-size: 0.76rem;
+      color: var(--gray);
+    }
+
+    .cart-table td:last-child,
+    .cart-table th:last-child {
+      text-align: right;
+    }
+
+    .cart-empty {
+      font-size: 0.84rem;
+      color: var(--gray);
+      margin-bottom: 0.2rem;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.55rem;
+      font-size: 0.92rem;
+    }
+
+    .muted {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* Forms */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.82rem;
+      color: #111827;
+    }
+
+    input,
+    textarea {
+      padding: 0.56rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      font: inherit;
+      width: 100%;
+      background: #f9fafb;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--maroon);
+      background: #ffffff;
+      box-shadow: 0 0 0 1px rgba(123, 27, 59, 0.08);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 78px;
+    }
+
+    /* Reviews */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 1000px) {
+      .reviews {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .review-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 0.9rem 1rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      font-size: 0.86rem;
+    }
+
+    .review-name {
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .review-role {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 0.35rem;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 0.82rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-item {
+      font-size: 0.95rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.1rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.28);
+      padding: 1rem 1.25rem 1.4rem;
+      font-size: 0.78rem;
+      color: var(--gray);
+      text-align: center;
+      background: #f8fafc;
+    }
+
+    footer span.brand {
+      color: var(--maroon);
+      font-weight: 500;
+    }
+
+    /* Floating WhatsApp */
+    .floating-whatsapp {
+      position: fixed;
+      right: 1.2rem;
+      bottom: 1.2rem;
+      z-index: 999;
+    }
+
+    .floating-whatsapp button {
+      border-radius: 999px;
+      padding: 0.72rem 1.1rem;
+      font-size: 0.86rem;
+      display: inline-flex;
+      gap: 0.45rem;
+      align-items: center;
+      border: none;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: white;
+      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.36);
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.18s ease;
+    }
+
+    .floating-whatsapp button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 48px rgba(22, 163, 74, 0.45);
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      main {
+        padding-inline: 1rem;
+      }
+
+      .floating-whatsapp {
+        right: 1rem;
+        bottom: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .quick-stats-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Reduce padding on very small screens */
+      main {
+        padding-inline: 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-mini {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <img src="new_logo.png" class="logo-mark" alt="YITC Logo">
+        <div>
+          <div class="logo-text-main">Yadav International Trade Concern</div>
+          <div class="logo-text-sub">VAT- 608548656</div>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+        ☰
+      </button>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#market-rates">Market Rates</a>
+        <a href="#buy-stock">Buy Fruits & Veg</a>
+        <a href="#sell-stock">Sell Stock</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" style="position: relative; overflow: hidden;">
+      <!-- Decorative Background Waves -->
+      <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"
+        viewBox="0 0 1200 600" preserveAspectRatio="none">
+        <!-- Top curve -->
+        <path d="M 0,100 Q 300,50 600,80 T 1200,60" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.3" />
+
+        <!-- Middle curve -->
+        <path d="M 0,250 Q 400,200 800,240 T 1200,220" fill="none" stroke="#16a34a" stroke-width="4" opacity="0.2" />
+
+        <!-- Bottom curve -->
+        <path d="M 0,450 Q 350,380 700,420 T 1200,400" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.25" />
+
+        <!-- Accent curve (left side) -->
+        <path d="M 0,150 Q 150,120 250,200 T 450,280" fill="none" stroke="#16a34a" stroke-width="5" opacity="0.15" />
+      </svg>
+
+      <div class="hero" style="position: relative; z-index: 1;">
+        <div>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Kalimati Wholesale • Daily Rates
+          </div>
+
+          <h1>
+            Wholesale <span>Fruits & Vegetables</span><br />
+            Fast and Transparent.
+          </h1>
+
+          <p>
+            We supply fresh fruits and vegetables in bulk, and also buy your Fruit and Vegetable stock and sell it to
+            the market. Check today's market rates and get in touch for orders.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn-primary" onclick="scrollToId('buy-stock')">🛒 Place Order</button>
+            <button class="btn-outline" onclick="openWhatsAppGeneral()">💬 WhatsApp</button>
+          </div>
+
+          <div class="hero-mini">
+            <div class="mini-pill">✅ Bulk supply</div>
+            <div class="mini-pill">✅ Sell Fruit and Vegetable stock</div>
+            <div class="mini-pill">✅ Live market reference</div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-photo">
+            <div class="hero-photo-inner" style="padding: 0; border: none;">
+              <img src="hero-vegetables.jpg" alt="Fresh Wholesale Fruits & Vegetables"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 14px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why-choose-us">
+      <div
+        style="background: linear-gradient(135deg, #053f02 0%, #04884f5b 100%); border-radius: var(--radius-lg); padding: 1.8rem 1.5rem; box-shadow: 0 20px 50px rgba(27, 123, 59, 0.25); border: none;">
+        <div style="text-align: center; margin-bottom: 1.2rem;">
+          <div style="font-size: 1.4rem; font-weight: 700; color: #ffffff; letter-spacing: 0.02em;">Why Choose Us</div>
+          <div style="height: 3px; width: 60px; background: #22c55e; margin: 0.6rem auto; border-radius: 2px;"></div>
+        </div>
+
+        <div
+          style="background: rgba(255, 255, 255, 0.95); border-radius: 12px; padding: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
+          <div style="display: grid; gap: 1.1rem; font-size: 0.92rem; line-height: 1.6; color: #1f2937;">
+            <div style="display: flex; align-items: start; gap: 1rem;">
+              <div
+                style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;">
+              </div>
+              <div><strong style="color: var(--green);">Direct Market Access:</strong> Get fresh produce straight from
+                Kalimati's wholesale market with live daily rates.</div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 1rem;">
+              <div
+                style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;">
+              </div>
+              <div><strong style="color: var(--green);">Fast & Reliable:</strong> Quick response times and consistent
+                quality you can count on.</div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 1rem;">
+              <div
+                style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;">
+              </div>
+              <div><strong style="color: var(--green);">Transparent Pricing:</strong> No hidden costs, just honest rates
+                confirmed in real-time.</div>
+            </div>
+
+            <div style="display: flex; align-items: start; gap: 1rem;">
+              <div
+                style="width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-top: 0.5rem; flex-shrink: 0;">
+              </div>
+              <div><strong style="color: var(--green);">Trusted Partner:</strong> Serving businesses for years, whether
+                you're buying bulk or selling surplus.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <p class="section-subtitle">Contact us for inquiries and orders.</p>
+
+      <div class="services-grid">
+        <div class="card">
+          <div class="service-title">Wholesale Supply</div>
+          <div class="service-text">Shops • hotels • restaurants • caterers.</div>
+        </div>
+        <div class="card">
+          <div class="service-title">Fruit and Vegetable Stock Buying</div>
+          <div class="service-text">Clear bulk unsold fruits / vegetables.</div>
+        </div>
+        <div class="card">
+          <div class="service-title">Order Support</div>
+          <div class="service-text">Pickup / delivery discussed on WhatsApp.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+      <h2 class="section-title">Most Selling Products <span>(Gallery)</span></h2>
+      <p class="section-subtitle">
+        Our best-selling fruits and vegetables. Contact us for current rates.
+      </p>
+
+      <div class="products-grid" id="productsGrid"></div>
+
+      <div style="margin: 0.9rem 0 0;">
+        <button class="btn-primary" onclick="scrollToId('market-rates')">📊 View Daily Market Rates</button>
+      </div>
+    </section>
+
+    <!-- DAILY MARKET RATES (LIVE) -->
+    <section id="market-rates">
+      <h2 class="section-title">Daily Market Rates <span>(Live)</span></h2>
+      <p class="section-subtitle">
+        View the official market list here. For your order, confirm rates with us.
+      </p>
+
+      <div class="card">
+        <iframe src="https://nepalicalendar.rat32.com/vegetable/embed.php" class="market-iframe" loading="lazy">
+        </iframe>
+
+        <div style="margin-top:0.8rem;">
+          <button class="btn-outline" onclick="scrollToId('buy-stock')">🛒 Place Order</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUY FRUITS AND VEGETABLES -->
+    <section id="buy-stock">
+      <h2 class="section-title">Buy <span>Fruits and Vegetables</span></h2>
+      <p class="section-subtitle">Tell us what you need — we confirm availability and rates.</p>
+
+      <div class="card">
+        <form id="buyForm">
+          <div>
+            <label for="buyName">Your Name</label>
+            <input type="text" id="buyName" placeholder="Name / business" required />
+          </div>
+
+          <div>
+            <label for="buyVeg">Item(s)</label>
+            <input type="text" id="buyVeg" placeholder="e.g. Tomato, Apple, Banana" required />
+          </div>
+
+          <div>
+            <label for="buyQty">Quantity</label>
+            <input type="text" id="buyQty" placeholder="e.g. 200 kg, 30 crates" required />
+          </div>
+
+          <div>
+            <label for="buyLocation">Delivery Location</label>
+            <input type="text" id="buyLocation" placeholder="e.g. Balkhu, Kalanki" required />
+          </div>
+
+          <div>
+            <label for="buyNotes">Notes (optional)</label>
+            <textarea id="buyNotes" placeholder="Quality requirements, delivery timing, budget..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">🛒 Send Inquiry</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SELL VEGETABLE AND FRUITS STOCKS -->
+    <section id="sell-stock">
+      <h2 class="section-title">Sell <span>Vegetable and Fruits Stocks</span></h2>
+      <p class="section-subtitle">Send details and we'll reply.</p>
+
+      <div class="card">
+        <form id="sellForm">
+          <div>
+            <label for="sellName">Your Name</label>
+            <input type="text" id="sellName" placeholder="Name / business" required />
+          </div>
+
+          <div>
+            <label for="sellVeg">Item(s)</label>
+            <input type="text" id="sellVeg" placeholder="e.g. Tomato, Apple, Banana" required />
+          </div>
+
+          <div>
+            <label for="sellQty">Quantity</label>
+            <input type="text" id="sellQty" placeholder="e.g. 200 kg, 30 crates" required />
+          </div>
+
+          <div>
+            <label for="sellLocation">Location</label>
+            <input type="text" id="sellLocation" placeholder="e.g. Balkhu, Kalanki" required />
+          </div>
+
+          <div>
+            <label for="sellNotes">Notes (optional)</label>
+            <textarea id="sellNotes" placeholder="Condition, expected price, timing..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">🚚 Send Details</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="reviews">
+      <h2 class="section-title">Customer <span>Reviews</span></h2>
+      <p class="section-subtitle">What our customers say about us.</p>
+
+      <div class="reviews">
+        <div class="review-card">
+          <div class="review-name">Retail Shop Buyer</div>
+          <div class="review-role">Kalanki</div>
+          <div class="stars">★★★★★</div>
+          <p>WhatsApp मा rate confirm हुन्छ, pickup पनि सजिलो।</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-name">Hotel Buyer</div>
+          <div class="review-role">Kathmandu</div>
+          <div class="stars">★★★★★</div>
+          <p>सप्लाइ नियमित छ र quality राम्रो हुन्छ।</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-name">Supplier / Farmer</div>
+          <div class="review-role">Nearby District</div>
+          <div class="stars">★★★★☆</div>
+          <p>स्टक धेरै हुँदा WhatsApp मा detail पठाउँदा छिट्टै response आउँछ।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <p class="section-subtitle">Get in touch for fastest response.</p>
+
+      <div class="contact-grid">
+        <div class="card">
+          <div class="contact-item">
+            <div class="contact-label">Mobile / Chat</div>
+            <div><strong>+977 9860251191</strong></div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">Phone (Alternate)</div>
+            <div><strong>+977 9707188307</strong></div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div>Kalimati Fruits & Vegetables Wholesale Market, Kathmandu</div>
+          </div>
+        </div>
+
+        <div class="card"
+          style="background: linear-gradient(135deg, #afd9b0 0%, #ffffff 100%); border: 1px solid rgba(34, 197, 94, 0.2);">
+          <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--green);">⚡ Quick Stats</h3>
+
+
+
+          <div class="quick-stats-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+            <div style="text-align: center; padding: 0.7rem; background: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--green);">25+</div>
+              <div style="font-size: 0.75rem; color: var(--gray);">Years Experience</div>
+            </div>
+
+            <div style="text-align: center; padding: 0.7rem; background: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--green);">500+</div>
+              <div style="font-size: 0.75rem; color: var(--gray);">Happy Clients</div>
+            </div>
+
+            <div style="text-align: center; padding: 0.7rem; background: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--green);">Daily</div>
+              <div style="font-size: 0.75rem; color: var(--gray);">Fresh Stock</div>
+            </div>
+
+            <div style="text-align: center; padding: 0.7rem; background: rgba(255, 255, 255, 0.7); border-radius: 8px;">
+              <div style="font-size: 1.8rem; font-weight: 700; color: var(--green);">100%</div>
+              <div style="font-size: 0.75rem; color: var(--gray);">Quality Assured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span>
+    <span class="brand">Ganesh Yadav Wholesale Fruits & Vegetables</span> • Kalimati.
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp">
+    <button onclick="openWhatsAppGeneral()">💬 Chat </button>
+  </div>
+
+  <script>
+    // ========================
+    // CONFIG
+    // ========================
+    const WHATSAPP_NUMBER = "9779860251191"; // primary WhatsApp (country code + number)
+
+    // Products for gallery display only
+    const PRODUCTS = [
+      { id: 1, name: "Tomato", type: "vegetable", image: "tomato.jpg" },
+      { id: 2, name: "Potato", type: "vegetable", image: "potato.jpg" },
+      { id: 3, name: "Cauliflower", type: "vegetable", image: "cauliflower.jpg" },
+      { id: 4, name: "Cabbage", type: "vegetable", image: "cabbage.jpg" },
+      { id: 5, name: "Onion", type: "vegetable", image: "onion.jpg" },
+      { id: 6, name: "Chillies ", type: "vegetable", image: "chillies.jpg" },
+      { id: 7, name: "Garlic ", type: "vegetable", image: "garlic.jpg" },
+      { id: 8, name: "Mixed Fruit Lot", type: "fruit", image: "mixed-fruit.jpg" },
+      { id: 9, name: "Coriander (Dhaniya)", type: "vegetable", image: "coriander.jpg" },
+    ];
+
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function openWhatsAppGeneral() {
+      const message =
+        "Namaste, I am interested in wholesale fruits and vegetables and today’s prices from Kalimati .";
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+
+      // Change icon
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (navLinks.classList.contains('active')) {
+        btn.innerHTML = '✕';
+      } else {
+        btn.innerHTML = '☰';
+      }
+    }
+
+    // Close menu when clicking a link
+    const navLinksContainer = document.querySelector('.nav-links');
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinksContainer.classList.remove('active');
+        menuBtn.innerHTML = '☰';
+      });
+    });
+
+    function renderProducts() {
+      const grid = document.getElementById("productsGrid");
+      grid.innerHTML = "";
+
+      PRODUCTS.forEach((p) => {
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        // Product image (large)
+        const imageContainer = document.createElement("div");
+        imageContainer.style.width = "100%";
+        imageContainer.style.height = "180px";
+        imageContainer.style.borderRadius = "12px";
+        imageContainer.style.background = "#f9fafb";
+        imageContainer.style.border = "1px solid rgba(229, 231, 235, 0.8)";
+        imageContainer.style.display = "flex";
+        imageContainer.style.alignItems = "center";
+        imageContainer.style.justifyContent = "center";
+        imageContainer.style.fontSize = "0.85rem";
+        imageContainer.style.color = "#9ca3af";
+        imageContainer.style.textAlign = "center";
+        imageContainer.style.overflow = "hidden";
+        imageContainer.style.marginBottom = "0.75rem";
+
+        if (p.image) {
+          const img = document.createElement("img");
+          img.src = p.image;
+          img.alt = p.name;
+          img.style.width = "100%";
+          img.style.height = "100%";
+          img.style.objectFit = "cover";
+          img.onerror = () => { imageContainer.textContent = "Add Image Here"; };
+          imageContainer.appendChild(img);
+        } else {
+          imageContainer.textContent = "Add Image Here";
+        }
+
+        card.appendChild(imageContainer);
+
+        // Product name
+        const nameEl = document.createElement("div");
+        nameEl.className = "product-name";
+        nameEl.textContent = p.name;
+        nameEl.style.marginBottom = "0.25rem";
+        card.appendChild(nameEl);
+
+        // Product meta
+        const meta = document.createElement("div");
+        meta.className = "product-meta";
+        meta.textContent = p.type === "fruit" ? "Fruit" : "Vegetable";
+        card.appendChild(meta);
+
+        grid.appendChild(card);
+      });
+    }
+
+
+
+    // Buy stock form -> WhatsApp
+    document.getElementById("buyForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("buyName").value.trim();
+      const veg = document.getElementById("buyVeg").value.trim();
+      const qty = document.getElementById("buyQty").value.trim();
+      const loc = document.getElementById("buyLocation").value.trim();
+      const notes = document.getElementById("buyNotes").value.trim();
+
+      let message = "Namaste, I want to buy wholesale fruits/vegetables (Kalimati):\n\n";
+      message += `Name: ${name}\n`;
+      message += `Item(s): ${veg}\n`;
+      message += `Quantity: ${qty}\n`;
+      if (loc) message += `Delivery Location: ${loc}\n`;
+      if (notes) message += `Notes: ${notes}\n`;
+      message += "\nPlease confirm today's rate, availability and delivery options.";
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    });
+
+    // Sell stock form -> WhatsApp
+    document.getElementById("sellForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("sellName").value.trim();
+      const veg = document.getElementById("sellVeg").value.trim();
+      const qty = document.getElementById("sellQty").value.trim();
+      const loc = document.getElementById("sellLocation").value.trim();
+      const notes = document.getElementById("sellNotes").value.trim();
+
+      let message = "Namaste, I want to sell fruits/vegetables (Kalimati):\n\n";
+      message += `Name: ${name}\n`;
+      message += `Item(s): ${veg}\n`;
+      message += `Quantity: ${qty}\n`;
+      if (loc) message += `Location: ${loc}\n`;
+      if (notes) message += `Notes: ${notes}\n`;
+      message += "\nPlease advise demand and possible rate for today.";
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    });
+
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Initial render
+    renderProducts();
+  </script>
+</body>
+
+</html>
