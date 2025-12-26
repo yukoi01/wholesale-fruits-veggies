@@ -1114,6 +1114,8 @@
 
     // Products for gallery display only
     const PRODUCTS = [
+      { id: 101, name: "Yam (Tarul)", type: "vegetable", image: "yam1.jpg", badge: "Most Selling 🔥" },
+      { id: 102, name: "Yam (Tarul)", type: "vegetable", image: "yam2.jpg", badge: "High Demand 📈" },
       { id: 1, name: "Tomato", type: "vegetable", image: "tomato.jpg" },
       { id: 2, name: "Potato", type: "vegetable", image: "potato.jpg" },
       { id: 3, name: "Cauliflower", type: "vegetable", image: "cauliflower.jpg" },
@@ -1168,6 +1170,29 @@
       PRODUCTS.forEach((p) => {
         const card = document.createElement("div");
         card.className = "product-card";
+
+        // Highlight Logic
+        if (p.badge) {
+          card.style.position = "relative";
+          card.style.border = "2px solid #ef4444"; // Red border for attention
+          card.style.background = "#fff1f2"; // Slight reddish background
+
+          const badge = document.createElement("div");
+          badge.textContent = p.badge;
+          badge.style.position = "absolute";
+          badge.style.top = "-10px";
+          badge.style.right = "-5px";
+          badge.style.background = "linear-gradient(135deg, #ef4444, #b91c1c)";
+          badge.style.color = "white";
+          badge.style.padding = "4px 10px";
+          badge.style.borderRadius = "20px";
+          badge.style.fontSize = "0.7rem";
+          badge.style.fontWeight = "bold";
+          badge.style.boxShadow = "0 4px 6px rgba(239, 68, 68, 0.3)";
+          badge.style.letterSpacing = "0.02em";
+          badge.style.zIndex = "2";
+          card.appendChild(badge);
+        }
 
         // Product image (large)
         const imageContainer = document.createElement("div");
@@ -1269,4 +1294,4 @@
   </script>
 </body>
 
-</html>
+</html
